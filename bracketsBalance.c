@@ -14,7 +14,7 @@
  * 
  * 
  *                                           Juntong Liu    
- *                                                                 2019-04-15
+ *                                                                 2019-07-17
  */
 
 #include <stdio.h>
@@ -144,6 +144,19 @@ static int checkCloseBracket(char c)
 
 /* ################################################################################################################## */
 #if 0  /* C# C# C# ####################  Here start the C# implementation C# C# C# C# ##########################  */
+
+// 
+// When running, this program prompt user to type in a string with brackets 
+// and the program will check to see if those brackets contained in the string 
+// are balanced or not.
+//  
+//    {[()]}, {sdf[e()r]erq}             balanced
+//    {[]}}[  }abc()                     not balanced
+//
+//
+//
+//                                                       Juntong Liu
+//                                                                            2019.04.15
 
 using System;
 using System.Collections.Generic;
