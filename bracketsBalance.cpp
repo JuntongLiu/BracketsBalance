@@ -20,14 +20,21 @@
 #include <map>
 #include <stack>
 
-std::map<char, char>charMap { {'(', ')'},
-                              {'[', ']'},
-                              {'{', '}'}
+class  BracketBalance{
+
+    public:
+        BracketBalance();
+        void CheckBalance(void);
+
+    private:
+        std::map<char, char>charMap { {'(', ')'},
+                                      {'[', ']'},
+                                      {'{', '}'} };
+        std::stack<char>charStack;
 };
 
-std::stack<char>charStack;
-
-int main()
+BracketBalance::BracketBalance(){};
+void BracketBalance::CheckBalance(void)
 {
     std::string myString;
     std::cout << "Type in a string with brackets." << "\n";
@@ -37,6 +44,7 @@ int main()
     int numberOfBrackets = 0;
     for (auto ch : myString)                                    //  Walk the string
     {
+       //for (const auto &[first, second] : charMap)
        for (const auto &kv : charMap)
        {
            if(ch == kv.first)                                   // Check to see if the char is an open bracket
@@ -66,14 +74,22 @@ int main()
             }
         }
      }
-     if(!charStack.empty() || balanced == false)              // Finally, make decision
+     if(!charStack.empty() || balanced == false)                // Finally, make decision
      {
-          std::cout << "The brackets are NOT balanced." << std::endl;
+          std::cout << "The brackets are NOT balanced." << std::endl << "\n";
      }
      else if(numberOfBrackets == 0)
-          std::cout << "No brackets in the string." << std::endl;
+          std::cout << "No brackets in the string." << std::endl << "\n";
      else
-          std::cout << "The brackets are Balanced!" << std::endl ;
+          std::cout << "The brackets are Balanced!" << std::endl << "\n";
+}
+
+
+int main()
+{
+    BracketBalance bb;
+    for(int i = 0; i < 3; i++)            // try 3 times
+        bb.CheckBalance();
 
     return 0;
 }
