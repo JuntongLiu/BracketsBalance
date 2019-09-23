@@ -8,5 +8,4 @@ For example, In this string: "{[()]}, {sdf[e()r]erq}"   brackets are balanced.
  
  And in this string: "{[]}}[  }abc()"  brackets are not balanced.
    
- The first part is a C implementation. And the second part is a C# implementation 
- using the .NET class library's dictionary and stack class.
+ The 3 files are 3 implementations using C, C++ and C#. It is interesting to compare them.
