@@ -35,30 +35,30 @@ int main()
 
     bool balanced = true;
     int numberOfBrackets = 0;
-    for (auto ch : myString)                                 //  Walk the string
+    for (auto ch : myString)                                    //  Walk the string
     {
-       for (const auto &[first, second] : charMap)
+       for (const auto &kv : charMap)
        {
-           if(ch == first)                                   // Check to see if the char is an open bracket
+           if(ch == kv.first)                                   // Check to see if the char is an open bracket
            {
-              charStack.push(ch);                            // ...yes, push it onto stack
+              charStack.push(ch);                               // ...yes, push it onto stack
               numberOfBrackets++;
               continue;
            }
-           else if(ch == second)                             // Check to see if the ch is a close bracket
+           else if(ch == kv.second)                             // Check to see if the ch is a close bracket
            {
                numberOfBrackets++;
-                if(!charStack.empty())                       // ...yes, and make sure the stack is not empty
+                if(!charStack.empty())                          // ...yes, and make sure the stack is not empty
                 {
-                    if(charStack.top() != first)             // Check to see if the close bracket match the one on the stack
+                    if(charStack.top() != kv.first)             // Check to see if the close bracket match the one on the stack
                     {
-                        balanced = false;                    // ... no, mismatch
+                        balanced = false;                       // ... no, mismatch
                         break;
                     }
-                    else                                     // ... yes, got a match
+                    else                                        // ... yes, got a match
                         charStack.pop();
                 }
-                else                                         // ... we have more close bracket
+                else                                            // ... we have more close bracket
                 {
                     balanced = false;
                     break;
