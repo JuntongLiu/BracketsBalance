@@ -8,7 +8,7 @@
  *   {[()]}, {sdf[e()r]erq}             balanced
  *   {[]}}[  }abc()                     not balanced
  *
- * It is interesting to compare the C, C++ and C# implementations.
+ * It is interesting to compare the C, C++, C# and Java implementations.
  *
  *
  *                                           Juntong Liu
@@ -24,6 +24,7 @@ class  BracketBalance{
 
     public:
         BracketBalance();
+        ~BracketBalance();
         void CheckBalance(void);
 
     private:
@@ -33,6 +34,7 @@ class  BracketBalance{
 };
 
 BracketBalance::BracketBalance() = default;
+BracketBalance::~BracketBalance() = default;
 void BracketBalance::CheckBalance(void)
 {
     std::string myString;
