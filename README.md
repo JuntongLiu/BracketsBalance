@@ -6,6 +6,6 @@ are balanced or not.
  
 For example, In this string: "{[()]}, {sdf[e()r]erq}"   brackets are balanced.
  
- And in this string: "{[]}}[  }abc()"  brackets are not balanced.
+ And in this string: "{[]}}[  }abc()"        brackets are not balanced.
    
- The 3 files are 3 implementations using C, C++ and C#. It is interesting to compare them.
+ The 4 files are 4 implementations using C, C++, C# and Java.  It is interesting to compare them.
