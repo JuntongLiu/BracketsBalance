@@ -30,16 +30,16 @@ class  BracketBalance{
         std::map<char, char>charMap { {'(', ')'},
                                       {'[', ']'},
                                       {'{', '}'} };
-        std::stack<char>charStack;
 };
 
-BracketBalance::BracketBalance(){};
+BracketBalance::BracketBalance() = default;
 void BracketBalance::CheckBalance(void)
 {
     std::string myString;
     std::cout << "Type in a string with brackets." << "\n";
     std::cin >> myString;
 
+    std::stack<char>charStack;
     bool balanced = true;
     int numberOfBrackets = 0;
     for (auto ch : myString)                                    //  Walk the string
