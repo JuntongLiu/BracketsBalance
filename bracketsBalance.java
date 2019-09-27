@@ -33,42 +33,48 @@ public class bracketsBalance
         public static void main(String[] args)
         {
             // create a map for the brackets
-            Map<Character, Character> charMap = new HashMap<Character, Character>();     // declare a map
+            Map<Character, Character> charMap = new HashMap<Character, Character>();     // create a map
             charMap.put('(', ')');                                      // populate the map
             charMap.put('[', ']');
             charMap.put('{', '}');
 
-            boolean balanced = true;
-            int numberOfBrackets = 0;
+            boolean balanced = true;                                   // flag to indicate if brackets are balanced
+            int numberOfBrackets = 0;                                  // number of brackets in the string
             Stack<Character> keyStack = new Stack<Character>();
             Collection<Character> values = charMap.values();      
           
-            Scanner input = new Scanner(System.in);                   // for user type in a string
+            Scanner input = new Scanner(System.in);                    // prompt user to type in a string
             System.out.println("Enter a string with brackets:");
  
             String userString = input.nextLine();
 
             char[] charArray = new char[userString.length()];
-            userString.getChars(0, userString.length(), charArray, 0); // convert the string to a char array
+            userString.getChars(0, userString.length(), charArray, 0); // convert the string into a char array
 
             for (char ch : charArray)                                  // walk the string to find any bracket
             {
                if(values.contains(ch))                                 // got a close bracket
                {
-                  if(keyStack.empty() || numberOfBrackets == 0)        // first one is a close bracket, unbalanced
+                  if(numberOfBrackets == 0)                            // first one is a close bracket, unbalanced
                   {
                       numberOfBrackets++;
                       balanced = false;
                       break;
                   }
-                  else 
+                  else if(!keyStack.empty())
                   {
+                      numberOfBrackets++;
                       Character close = keyStack.peek(); 
                       if ((charMap.get(close)).equals(ch))
                       {
-                        numberOfBrackets++;                            // get a match
+                        // get a match
                         keyStack.pop();
                         continue;
+                      }
+                      else
+                      {
+                        balanced = false;
+                        break;
                       }
                   }
                 }
