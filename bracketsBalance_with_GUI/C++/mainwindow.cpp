@@ -21,7 +21,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-// Signal handler for the pushButtonRun clicked() signal. Qt event and signal/slot are two different
+// Signal handler for the pushButtonRun clicked() signal. Qt event and signal/slot are two different 
 // ways to do the same thing - notice and action. Event is used when implement widgets or modify widgets.
 // Signal/slot are used when using widgets, for inter-class communication.
 // Here, when the pushButton_Run object is clicked, it will send a clicked() signal to the mainWindow class.
